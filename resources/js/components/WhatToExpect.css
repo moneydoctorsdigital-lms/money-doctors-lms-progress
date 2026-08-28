@@ -1,0 +1,311 @@
+/* =========================================
+   LEARNING OVERVIEW
+========================================= */
+
+.learning-overview {
+    position: relative;
+    background: #ffffff;
+    padding: 70px 0 75px;
+    color: #071b43;
+}
+
+.overview-container {
+    width: min(1540px, 90%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 42px;
+}
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 27px;
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    color: #071b43;
+}
+
+.section-heading p {
+    margin: 6px 0 0;
+
+    font-size: 13px;
+
+    color: #61708c;
+}
+
+/* =========================================
+   EXPECTATIONS
+========================================= */
+
+.expect-section {
+    padding-right: 38px;
+
+    border-right: 1px solid #e6ebf3;
+}
+
+.expect-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.expect-card {
+    min-height: 160px;
+
+    padding: 18px 13px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf2;
+    border-radius: 11px;
+
+    box-shadow: 0 5px 16px rgba(18, 43, 85, 0.06);
+
+    transition: 0.2s ease;
+}
+
+.expect-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(18, 43, 85, 0.1);
+}
+
+.expect-icon {
+    width: 48px;
+    height: 48px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf3ff;
+
+    color: #3778f5;
+
+    font-size: 23px;
+}
+
+.expect-card h3 {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    color: #0a214a;
+}
+
+.expect-card p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.45;
+
+    color: #66758f;
+}
+
+/* =========================================
+   COURSES
+========================================= */
+
+.courses-section {
+    min-width: 0;
+}
+
+.course-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.course-heading a {
+    margin-top: 5px;
+
+    color: #326ff0;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.course-heading a:hover {
+    text-decoration: underline;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.course-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7f0;
+    border-radius: 11px;
+
+    box-shadow: 0 5px 16px rgba(18, 43, 85, 0.06);
+
+    transition: 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(18, 43, 85, 0.11);
+}
+
+.course-image {
+    height: 112px;
+
+    overflow: hidden;
+
+    background: #eaf0fb;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image img {
+    transform: scale(1.04);
+}
+
+.course-info {
+    padding: 13px;
+}
+
+.course-info h3 {
+    margin: 0 0 6px;
+
+    font-size: 13px;
+    line-height: 1.25;
+
+    font-weight: 800;
+
+    color: #071b43;
+}
+
+.course-info p {
+    margin: 0 0 9px;
+
+    font-size: 10px;
+
+    color: #73809a;
+}
+
+.course-level {
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    background: #edf3ff;
+
+    color: #346fe5;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .overview-container {
+        grid-template-columns: 1fr;
+    }
+
+    .expect-section {
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .expect-grid,
+    .course-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .learning-overview {
+        padding: 55px 0;
+    }
+
+    .expect-grid,
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .course-heading {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .overview-container {
+        width: 90%;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .expect-grid,
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expect-card {
+        min-height: 140px;
+    }
+
+    .course-image {
+        height: 170px;
+    }
+}

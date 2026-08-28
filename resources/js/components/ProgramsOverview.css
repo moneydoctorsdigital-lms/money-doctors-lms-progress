@@ -1,0 +1,490 @@
+.programs-overview {
+    width: 100%;
+    background: #f8faff;
+    color: #071b46;
+    padding: 28px 0 55px;
+}
+
+.programs-container {
+    width: min(1400px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   EXPLORE OUR PROGRAMS
+===================================================== */
+
+.programs-section {
+    margin-bottom: 28px;
+}
+
+.programs-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.programs-heading h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #071b46;
+}
+
+.programs-heading p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #66758f;
+}
+
+.programs-heading a {
+    color: #356cff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.programs-heading a:hover {
+    color: #214fd0;
+}
+
+
+/* =====================================================
+   PROGRAM CARDS
+===================================================== */
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.program-card {
+    min-height: 390px;
+    padding: 0;
+    background: #ffffff;
+    border: 1px solid #e3e9f3;
+    border-radius: 13px;
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 20px rgba(7, 27, 70, 0.045);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(7, 27, 70, 0.08);
+}
+
+
+/* =====================================================
+   PROGRAM IMAGE
+===================================================== */
+
+.program-image {
+    width: 100%;
+    height: 165px;
+    overflow: hidden;
+    background: #edf3ff;
+    flex-shrink: 0;
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.35s ease;
+}
+
+.program-card:hover .program-image img {
+    transform: scale(1.04);
+}
+
+
+/* =====================================================
+   PROGRAM CONTENT
+===================================================== */
+
+.program-content {
+    flex: 1;
+    padding: 18px 18px 17px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.program-content h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 800;
+
+    color: #071b46;
+}
+
+.program-content p {
+    margin: 0;
+
+    color: #66758f;
+
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.program-content a {
+    margin-top: auto;
+    padding-top: 18px;
+
+    color: #356cff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.program-content a:hover {
+    color: #214fd0;
+}
+
+
+/* =====================================================
+   LOWER AREA
+===================================================== */
+
+.lower-overview {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 38px;
+
+    padding-top: 28px;
+
+    border-top: 1px solid #e2e8f2;
+}
+
+
+/* =====================================================
+   WHY CHOOSE
+===================================================== */
+
+.why-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 25px;
+
+    padding-right: 20px;
+
+    border-right: 1px solid #e2e8f2;
+}
+
+.section-heading-left h2 {
+    margin: 0 0 12px;
+
+    font-size: 24px;
+    line-height: 1.12;
+    font-weight: 800;
+
+    color: #071b46;
+}
+
+.section-heading-left p {
+    margin: 0;
+
+    color: #66758f;
+
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   BENEFIT LIST
+===================================================== */
+
+.benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.benefit-check {
+    flex: 0 0 27px;
+
+    width: 27px;
+    height: 27px;
+
+    border-radius: 50%;
+
+    background: #356cff;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 12px rgba(53, 108, 255, 0.18);
+}
+
+.benefit-item h3 {
+    margin: 0 0 2px;
+
+    color: #071b46;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.benefit-item p {
+    margin: 0;
+
+    color: #66758f;
+
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.how-section {
+    padding-left: 3px;
+}
+
+.how-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.how-heading h2 {
+    margin: 0;
+
+    color: #071b46;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.how-heading p {
+    margin: 5px 0 0;
+
+    color: #66758f;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   STEPS
+===================================================== */
+
+.steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+
+.step {
+    flex: 1;
+    min-width: 0;
+
+    text-align: center;
+}
+
+.step-number {
+    width: 28px;
+    height: 28px;
+
+    margin: 0 auto 7px;
+
+    border-radius: 50%;
+
+    background: #edf3ff;
+    color: #356cff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.step-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 9px;
+
+    border-radius: 50%;
+
+    background: #356cff;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 7px 18px rgba(53, 108, 255, 0.18);
+}
+
+.step h3 {
+    margin: 0 0 5px;
+
+    color: #071b46;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.step p {
+    margin: 0;
+
+    color: #66758f;
+
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.step-arrow {
+    flex: 0 0 auto;
+
+    margin-top: 75px;
+
+    color: #8ca9e8;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .program-image {
+        height: 180px;
+    }
+
+    .lower-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .why-section {
+        border-right: none;
+
+        border-bottom: 1px solid #e2e8f2;
+
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .programs-overview {
+        padding: 25px 0 40px;
+    }
+
+    .programs-heading {
+        display: block;
+    }
+
+    .programs-heading a {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        min-height: 370px;
+    }
+
+    .program-image {
+        height: 200px;
+    }
+
+    .why-section {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 10px;
+    }
+
+    .step-arrow {
+        display: none;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .programs-heading h2 {
+        font-size: 25px;
+    }
+
+    .section-heading-left h2,
+    .how-heading h2 {
+        font-size: 22px;
+    }
+
+    .program-image {
+        height: 190px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,507 @@
+/* =========================================
+   MONEY DOCTORS DIGITAL - HERO
+========================================= */
+
+.hero {
+    position: relative;
+    min-height: calc(100vh - 100px);
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061738 0%,
+            #071d46 52%,
+            #09275f 100%
+        );
+
+    color: #ffffff;
+}
+
+/* =========================================
+   BACKGROUND CIRCLES
+========================================= */
+
+.hero-bg-circle {
+    position: absolute;
+    border: 1px solid rgba(58, 126, 255, 0.22);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.circle-1 {
+    width: 620px;
+    height: 620px;
+    right: -90px;
+    top: -220px;
+}
+
+.circle-2 {
+    width: 800px;
+    height: 800px;
+    right: -170px;
+    top: -300px;
+}
+
+.circle-3 {
+    width: 980px;
+    height: 980px;
+    right: -260px;
+    top: -390px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1540px, 92%);
+    min-height: calc(100vh - 100px);
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 48% 52%;
+    align-items: center;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+
+    padding-top: 5px;
+    padding-bottom: 35px;
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 9px 17px;
+
+    border: 1px solid rgba(65, 132, 255, 0.55);
+    border-radius: 30px;
+
+    background: rgba(16, 52, 110, 0.35);
+
+    color: #63a0ff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 24px;
+}
+
+.hero-badge span {
+    font-size: 20px;
+    line-height: 10px;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.hero h1 {
+    margin: 0;
+
+    max-width: 690px;
+
+    font-size: clamp(48px, 4.2vw, 67px);
+    line-height: 0.98;
+
+    font-weight: 800;
+
+    letter-spacing: -2.5px;
+
+    color: #ffffff;
+}
+
+.hero h1 span {
+    color: #4382ff;
+}
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.hero-subtitle {
+    margin: 25px 0 26px;
+
+    font-size: 19px;
+    line-height: 1.4;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 38px;
+}
+
+.hero-btn {
+    height: 53px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    border-radius: 13px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: all 0.2s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Primary */
+
+.hero-btn.primary {
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #397aff,
+        #4b42e9
+    );
+
+    box-shadow: 0 10px 25px rgba(52, 93, 255, 0.25);
+}
+
+.hero-btn.primary span {
+    font-size: 20px;
+}
+
+/* Secondary */
+
+.hero-btn.secondary {
+    color: #ffffff;
+
+    border: 1px solid rgba(61, 132, 255, 0.75);
+
+    background: rgba(5, 25, 65, 0.35);
+}
+
+.play-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #397aff;
+
+    font-size: 9px;
+}
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.hero-benefits {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 160px;
+}
+
+.benefit-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(63, 135, 255, 0.65);
+
+    background: rgba(22, 65, 130, 0.28);
+
+    color: #4c8cff;
+
+    font-size: 17px;
+}
+
+.benefit-item strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.benefit-item small {
+    display: block;
+
+    font-size: 10px;
+
+    color: #a9c2ed;
+
+    white-space: nowrap;
+}
+
+/* =========================================
+   WOMAN / RIGHT SIDE
+========================================= */
+
+.hero-visual {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+.hero-woman {
+    position: absolute;
+
+    z-index: 3;
+
+    /*
+       MAIN SIZE
+       Ito ang pinaka-importanteng adjustment.
+    */
+
+    width: 650px;
+
+    max-width: none;
+
+    right: -35px;
+
+    /*
+       INAANGAT ANG BABAE
+    */
+
+    bottom: 5px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 22px 35px rgba(0, 0, 0, 0.22)
+    );
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+    .hero-container {
+        width: min(1540px, 90%);
+    }
+
+    .hero-woman {
+        width: 690px;
+        right: -25px;
+        bottom: 5px;
+    }
+
+    .hero h1 {
+        font-size: 67px;
+    }
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .hero-container {
+        grid-template-columns: 50% 50%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-woman {
+        width: 610px;
+        right: -60px;
+        bottom: 0;
+    }
+
+    .hero-benefits {
+        gap: 15px;
+    }
+
+    .benefit-item {
+        min-width: 145px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero h1 {
+        margin: 0 auto;
+        font-size: 55px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-benefits {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        height: 470px;
+        margin-top: 10px;
+    }
+
+    .hero-woman {
+        width: 600px;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -20px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        width: 90%;
+        padding-top: 45px;
+    }
+
+    .hero-badge {
+        font-size: 10px;
+        padding: 8px 14px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        line-height: 0.99;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-btn {
+        width: 100%;
+    }
+
+    .hero-benefits {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 13px;
+
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .hero-visual {
+        height: 390px;
+    }
+
+    .hero-woman {
+        width: 530px;
+        right: 50%;
+        bottom: -15px;
+    }
+}
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-visual {
+        height: 330px;
+    }
+
+    .hero-woman {
+        width: 470px;
+    }
+}

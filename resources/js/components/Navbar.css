@@ -1,0 +1,494 @@
+/* =========================================================
+   MONEY DOCTORS LMS
+   NAVBAR
+   ========================================================= */
+
+   .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #061534;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.navbar-container {
+    width: min(100% - 48px, 1280px);
+    min-height: 78px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+}
+
+/* Actual Money Doctors Digital Logo */
+
+.navbar-logo {
+    display: block;
+
+    width: 220px;
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    margin-left: auto;
+}
+
+.navbar-links a {
+    position: relative;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 0.94rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: #6b8fff;
+}
+
+/* =========================================================
+   ACTIVE LINK
+   ========================================================= */
+
+.navbar-links a.active {
+    color: #ffffff;
+}
+
+.navbar-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -10px;
+
+    width: 22px;
+    height: 2px;
+
+    margin: auto;
+
+    border-radius: 999px;
+
+    background: #4d7cff;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.navbar-actions a {
+    text-decoration: none;
+}
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.navbar-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-size: 0.94rem;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.navbar-login:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   REGISTER
+   ========================================================= */
+
+.navbar-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 25px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        #3f6ff5 0%,
+        #4d43e8 100%
+    );
+
+    color: #ffffff;
+
+    font-size: 0.94rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(63, 111, 245, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.navbar-register:hover {
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+    filter: brightness(1.05);
+
+    box-shadow:
+        0 12px 26px rgba(63, 111, 245, 0.30);
+}
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 21px;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+/* Hamburger -> X */
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu {
+    display: none;
+
+    width: 100%;
+
+    padding: 16px 0 24px;
+
+    background: #061534;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   MOBILE NAV
+   ========================================================= */
+
+.mobile-nav {
+    width: min(100% - 48px, 1280px);
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.mobile-nav a {
+    display: flex;
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 0 12px;
+
+    border-radius: 10px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.mobile-nav a:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   MOBILE ACTIONS
+   ========================================================= */
+
+.mobile-actions {
+    width: min(100% - 48px, 1280px);
+
+    margin: 14px auto 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.mobile-actions a {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 0.96rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   MOBILE LOGIN
+   ========================================================= */
+
+.mobile-login {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #ffffff;
+}
+
+.mobile-login:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+}
+
+/* =========================================================
+   MOBILE REGISTER
+   ========================================================= */
+
+.mobile-register {
+    background: linear-gradient(
+        135deg,
+        #3f6ff5 0%,
+        #4d43e8 100%
+    );
+
+    color: #ffffff;
+}
+
+.mobile-register:hover {
+    color: #ffffff;
+
+    filter: brightness(1.05);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .navbar-container {
+        width: min(100% - 40px, 1180px);
+    }
+
+    .navbar-links {
+        gap: 22px;
+    }
+
+    .navbar-logo {
+        width: 200px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+    .navbar-container {
+        width: calc(100% - 32px);
+
+        min-height: 70px;
+
+        gap: 16px;
+    }
+
+    .navbar-logo {
+        width: 185px;
+    }
+
+    .navbar-links,
+    .navbar-actions {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .mobile-nav,
+    .mobile-actions {
+        width: calc(100% - 32px);
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar-container {
+        width: calc(100% - 24px);
+
+        min-height: 64px;
+    }
+
+    .navbar-logo {
+        width: 165px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-nav,
+    .mobile-actions {
+        width: calc(100% - 24px);
+    }
+
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .navbar-logo {
+        width: 150px;
+    }
+
+}

@@ -1,0 +1,55 @@
+.how-it-works {
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.how-it-works .section-label {
+    color: #9db6ff;
+}
+
+.how-it-works h2 {
+    color: #ffffff;
+}
+
+.how-it-works .section-heading p {
+    color: #c8cfdb;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+.step-number {
+    display: inline-block;
+    color: #9db6ff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+}
+
+.step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #c8cfdb;
+    font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+    .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+}

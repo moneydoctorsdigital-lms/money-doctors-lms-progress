@@ -8,19 +8,19 @@ function TestimonialsBlog() {
             name: "Jessica M.",
             role: "Student",
             text: "The platform is easy to use and the lessons are very well-structured. It has helped me improve my financial skills and confidence.",
-            image: "/images/Testimonial-Jessica.jpg"
+            image: `${import.meta.env.BASE_URL}images/Testimonial-Jessica.jpg`,
         },
         {
             name: "Mark R.",
             role: "Student",
             text: "The courses helped me understand money management in a much simpler and more practical way.",
-            image: "/images/Testimonial-Jessica.jpg"
+            image: `${import.meta.env.BASE_URL}images/Budget-hack.jpg`,
         },
         {
             name: "Karen D.",
             role: "Student",
             text: "I like how organized the learning journey is. I always know what to learn next.",
-            image: "/images/Testimonial-Jessica.jpg"
+            image: `${import.meta.env.BASE_URL}images/Benefit-online.jpg`,
         }
     ];
 
@@ -28,17 +28,17 @@ function TestimonialsBlog() {
         {
             category: "FINANCE",
             title: "10 Budget Hacks That Improve Your Savings",
-            image: "/images/Budget-hack.jpg"
+            image: `${import.meta.env.BASE_URL}images/stay-motivated.jpg`,
         },
         {
             category: "EDUCATION",
             title: "The Benefits of Online Learning for Students",
-            image: "/images/Benefit-online.jpg"
+            image: `${import.meta.env.BASE_URL}images/Budget-hack.jpg`,
         },
         {
             category: "LIFESTYLE",
             title: "How to Stay Motivated During Your Learning Journey",
-            image: "/images/stay-motivated.jpg"
+            image: `${import.meta.env.BASE_URL}images/stay-motivated.jpg`,
         }
     ];
 

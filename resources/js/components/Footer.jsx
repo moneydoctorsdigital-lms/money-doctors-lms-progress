@@ -64,10 +64,11 @@ function Footer() {
                     {/* BRAND */}
                     <div className="footer-brand">
                         <div className="footer-logo">
-                            <img
-                                src="/images/money-doctors.png"
-                                alt="Money Doctors Digital"
-                            />
+                        <img
+    src={`${import.meta.env.BASE_URL}images/money-doctors.png`}
+    alt="Money Doctors Digital"
+/>
+
                         </div>
 
                         <p>

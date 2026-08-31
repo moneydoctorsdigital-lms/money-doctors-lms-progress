@@ -12,49 +12,28 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* =========================================================
-   CONTAINER
-   ========================================================= */
-
 .navbar-container {
-    width: min(100% - 48px, 1280px);
+    width: min(calc(100% - 48px), 1280px);
     min-height: 78px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
 }
-
-/* =========================================================
-   BRAND
-   ========================================================= */
 
 .navbar-brand {
     display: flex;
     align-items: center;
-
     flex-shrink: 0;
-
     text-decoration: none;
 }
-
-.navbar-brand:hover {
-    text-decoration: none;
-}
-
-/* Actual Money Doctors Digital Logo */
 
 .navbar-logo {
     display: block;
-
     width: 220px;
     height: auto;
-
     max-width: 100%;
-
     object-fit: contain;
 }
 
@@ -65,21 +44,64 @@
 .navbar-links {
     display: flex;
     align-items: center;
-
-    gap: 32px;
-
+    gap: 30px;
     margin-left: auto;
 }
 
-.navbar-links a {
-    position: relative;
-
+.navbar-links > a,
+.navbar-dropdown-btn {
     color: #ffffff;
     text-decoration: none;
+    font-size: 0.94rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
 
+.navbar-links > a {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.navbar-links > a:hover {
+    color: #6b8fff;
+}
+
+/* =========================================================
+   DESKTOP HOVER DROPDOWN
+   ========================================================= */
+
+/* =========================================================
+   DROPDOWN WRAPPER
+   ========================================================= */
+
+   .navbar-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   DROPDOWN BUTTON
+   ========================================================= */
+
+.navbar-dropdown-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #ffffff;
+    font-family: inherit;
     font-size: 0.94rem;
     font-weight: 600;
 
+    cursor: pointer;
     white-space: nowrap;
 
     transition:
@@ -87,37 +109,210 @@
         opacity 0.2s ease;
 }
 
-.navbar-links a:hover {
+.navbar-dropdown-btn:hover {
     color: #6b8fff;
 }
 
+
 /* =========================================================
-   ACTIVE LINK
+   DROPDOWN ARROW
    ========================================================= */
 
-.navbar-links a.active {
-    color: #ffffff;
+.navbar-dropdown-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    line-height: 1;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    transition:
+        transform 0.25s ease,
+        color 0.2s ease;
 }
 
-.navbar-links a.active::after {
+.navbar-dropdown:hover .navbar-dropdown-arrow {
+    color: #6b8fff;
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+   ========================================================= */
+
+.navbar-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    left: 50%;
+
+    min-width: 235px;
+    padding: 8px;
+
+    transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    background: rgba(6, 21, 52, 0.98);
+
+    border: 1px solid rgba(77, 124, 255, 0.20);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    z-index: 1100;
+}
+
+
+/* =========================================================
+   SMALL TOP ACCENT
+   ========================================================= */
+
+.navbar-dropdown-menu::before {
     content: "";
 
     position: absolute;
 
-    left: 0;
-    right: 0;
-    bottom: -10px;
+    top: -6px;
+    left: 50%;
 
-    width: 22px;
-    height: 2px;
+    width: 12px;
+    height: 12px;
 
-    margin: auto;
+    transform: translateX(-50%) rotate(45deg);
+
+    background: #061534;
+
+    border-left: 1px solid rgba(77, 124, 255, 0.20);
+    border-top: 1px solid rgba(77, 124, 255, 0.20);
+}
+
+
+/* =========================================================
+   SHOW ON HOVER
+   ========================================================= */
+
+.navbar-dropdown:hover .navbar-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   DROPDOWN LINKS
+   ========================================================= */
+
+.navbar-dropdown-menu a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 42px;
+    padding: 0 13px;
+
+    border-radius: 9px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        padding-left 0.18s ease;
+}
+
+
+/* =========================================================
+   HOVER ITEM
+   ========================================================= */
+
+.navbar-dropdown-menu a:hover {
+    padding-left: 17px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(63, 111, 245, 0.18),
+            rgba(77, 67, 232, 0.08)
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   BLUE INDICATOR ON HOVER
+   ========================================================= */
+
+.navbar-dropdown-menu a::before {
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+
+    width: 3px;
+    height: 0;
 
     border-radius: 999px;
 
     background: #4d7cff;
+
+    transition: height 0.18s ease;
 }
 
+.navbar-dropdown-menu a:hover::before {
+    height: 18px;
+}
+
+
+/* =========================================================
+   MOUSE BRIDGE
+   Prevent dropdown from disappearing
+   while moving cursor downward
+   ========================================================= */
+
+.navbar-dropdown-menu::after {
+    content: "";
+
+    position: absolute;
+
+    top: -14px;
+    left: 0;
+    right: 0;
+
+    height: 14px;
+}
 /* =========================================================
    ACTIONS
    ========================================================= */
@@ -125,9 +320,7 @@
 .navbar-actions {
     display: flex;
     align-items: center;
-
     gap: 8px;
-
     flex-shrink: 0;
 }
 
@@ -135,29 +328,17 @@
     text-decoration: none;
 }
 
-/* =========================================================
-   LOGIN
-   ========================================================= */
-
 .navbar-login {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 44px;
-
     padding: 0 14px;
-
     border-radius: 10px;
-
     color: #ffffff;
-
     font-size: 0.94rem;
     font-weight: 700;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .navbar-login:hover {
@@ -165,19 +346,12 @@
     background: rgba(255, 255, 255, 0.07);
 }
 
-/* =========================================================
-   REGISTER
-   ========================================================= */
-
 .navbar-register {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 48px;
-
     padding: 0 25px;
-
     border-radius: 999px;
 
     background: linear-gradient(
@@ -187,12 +361,10 @@
     );
 
     color: #ffffff;
-
     font-size: 0.94rem;
     font-weight: 700;
 
-    box-shadow:
-        0 8px 20px rgba(63, 111, 245, 0.20);
+    box-shadow: 0 8px 20px rgba(63, 111, 245, 0.20);
 
     transition:
         transform 0.2s ease,
@@ -202,13 +374,9 @@
 
 .navbar-register:hover {
     color: #ffffff;
-
     transform: translateY(-1px);
-
     filter: brightness(1.05);
-
-    box-shadow:
-        0 12px 26px rgba(63, 111, 245, 0.30);
+    box-shadow: 0 12px 26px rgba(63, 111, 245, 0.30);
 }
 
 /* =========================================================
@@ -217,10 +385,8 @@
 
 .menu-toggle {
     display: none;
-
     width: 44px;
     height: 44px;
-
     padding: 0;
 
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -232,28 +398,21 @@
 
     align-items: center;
     justify-content: center;
-
     flex-direction: column;
-
     gap: 5px;
 }
 
 .menu-toggle span {
     display: block;
-
     width: 21px;
     height: 2px;
-
     border-radius: 999px;
-
     background: #ffffff;
 
     transition:
         transform 0.2s ease,
         opacity 0.2s ease;
 }
-
-/* Hamburger -> X */
 
 .menu-toggle.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
@@ -273,43 +432,31 @@
 
 .mobile-menu {
     display: none;
-
     width: 100%;
-
     padding: 16px 0 24px;
-
     background: #061534;
-
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* =========================================================
-   MOBILE NAV
-   ========================================================= */
-
 .mobile-nav {
-    width: min(100% - 48px, 1280px);
-
+    width: min(calc(100% - 48px), 1280px);
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
-
     gap: 2px;
 }
 
-.mobile-nav a {
+.mobile-nav > a {
     display: flex;
     align-items: center;
 
     min-height: 48px;
-
     padding: 0 12px;
 
     border-radius: 10px;
 
     color: rgba(255, 255, 255, 0.85);
-
     text-decoration: none;
 
     font-size: 1rem;
@@ -320,30 +467,111 @@
         color 0.2s ease;
 }
 
-.mobile-nav a:hover {
+.mobile-nav > a:hover {
     color: #ffffff;
-
     background: rgba(255, 255, 255, 0.07);
 }
 
-/* =========================================================
-   MOBILE ACTIONS
-   ========================================================= */
+.mobile-dropdown {
+    width: 100%;
+}
+
+.mobile-dropdown-btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.mobile-dropdown-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.mobile-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;
+
+    transition: transform 0.2s ease;
+}
+
+.mobile-arrow.rotate {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu {
+    display: flex;
+    flex-direction: column;
+
+    margin: 2px 8px 6px;
+    padding: 5px 0;
+
+    border-left: 1px solid rgba(107, 143, 255, 0.30);
+    background: rgba(255, 255, 255, 0.025);
+
+    border-radius: 0 8px 8px 0;
+}
+
+.mobile-submenu a {
+    display: flex;
+    align-items: center;
+
+    min-height: 42px;
+    padding: 0 14px 0 20px;
+
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+
+    font-size: 0.92rem;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.mobile-submenu a:hover {
+    color: #ffffff;
+    background: rgba(76, 118, 255, 0.12);
+    padding-left: 24px;
+}
 
 .mobile-actions {
-    width: min(100% - 48px, 1280px);
-
+    width: min(calc(100% - 48px), 1280px);
     margin: 14px auto 0;
 
     display: flex;
     flex-direction: column;
-
     gap: 9px;
 }
 
 .mobile-actions a {
     width: 100%;
-
     min-height: 48px;
 
     display: flex;
@@ -351,34 +579,22 @@
     justify-content: center;
 
     border-radius: 12px;
-
     text-decoration: none;
 
     font-size: 0.96rem;
     font-weight: 700;
 }
 
-/* =========================================================
-   MOBILE LOGIN
-   ========================================================= */
-
 .mobile-login {
     border: 1px solid rgba(255, 255, 255, 0.14);
-
     background: rgba(255, 255, 255, 0.04);
-
     color: #ffffff;
 }
 
 .mobile-login:hover {
     background: rgba(255, 255, 255, 0.08);
-
     color: #ffffff;
 }
-
-/* =========================================================
-   MOBILE REGISTER
-   ========================================================= */
 
 .mobile-register {
     background: linear-gradient(
@@ -386,13 +602,11 @@
         #3f6ff5 0%,
         #4d43e8 100%
     );
-
     color: #ffffff;
 }
 
 .mobile-register:hover {
     color: #ffffff;
-
     filter: brightness(1.05);
 }
 
@@ -400,20 +614,28 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 1050px) {
-
+@media (max-width: 1100px) {
     .navbar-container {
-        width: min(100% - 40px, 1180px);
+        width: min(calc(100% - 40px), 1180px);
     }
 
     .navbar-links {
-        gap: 22px;
+        gap: 20px;
     }
 
     .navbar-logo {
         width: 200px;
     }
 
+    .navbar-links > a,
+    .navbar-dropdown-btn,
+    .navbar-login {
+        font-size: 0.88rem;
+    }
+
+    .navbar-register {
+        padding: 0 21px;
+    }
 }
 
 /* =========================================================
@@ -421,12 +643,9 @@
    ========================================================= */
 
 @media (max-width: 899px) {
-
     .navbar-container {
         width: calc(100% - 32px);
-
         min-height: 70px;
-
         gap: 16px;
     }
 
@@ -451,6 +670,12 @@
     .mobile-actions {
         width: calc(100% - 32px);
     }
+
+    /* Desktop hover dropdown is disabled on mobile.
+       Mobile uses tap/expand instead. */
+    .navbar-dropdown {
+        display: none;
+    }
 }
 
 /* =========================================================
@@ -458,10 +683,8 @@
    ========================================================= */
 
 @media (max-width: 480px) {
-
     .navbar-container {
         width: calc(100% - 24px);
-
         min-height: 64px;
     }
 
@@ -479,6 +702,9 @@
         width: calc(100% - 24px);
     }
 
+    .mobile-submenu a {
+        font-size: 0.88rem;
+    }
 }
 
 /* =========================================================
@@ -486,9 +712,12 @@
    ========================================================= */
 
 @media (max-width: 360px) {
-
     .navbar-logo {
         width: 150px;
     }
 
+    .mobile-dropdown-btn,
+    .mobile-nav > a {
+        font-size: 0.94rem;
+    }
 }

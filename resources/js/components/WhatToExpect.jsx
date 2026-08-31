@@ -30,26 +30,26 @@ function WhatToExpect() {
             title: "Financial Foundations",
             lessons: "6 lessons",
             level: "Beginner",
-            image: "/images/Financial-Foundations.jpg"
+            image: "/money-doctors-lms-progress/images/Financial-Foundations.jpg",
         },
         {
             title: "Building a Financial Plan",
             lessons: "8 lessons",
             level: "Beginner",
-            image: "/images/Building-Financial-Plan.jpg"
+            image: "/money-doctors-lms-progress/images/Building-Financial-Plan.jpg",
         },
         {
             title: "Setting Financial Goals",
             lessons: "5 lessons",
             level: "Beginner",
-            image: "/images/Setting-Financial-Goals.jpg"
+            image: "/money-doctors-lms-progress/images/Setting-Financial-Goals.jpg",
         },
         {
             title: "Smart Investing Basics",
             lessons: "7 lessons",
             level: "Intermediate",
-            image: "/images/Smart-Investing-Basics.jpg"
-        }
+            image: "/money-doctors-lms-progress/images/Smart-Investing-Basics.jpg",
+        },
     ];
 
     return (

@@ -2,26 +2,28 @@ import React from "react";
 import "./ProgramsOverview.css";
 
 function ProgramsOverview() {
+    const baseUrl = import.meta.env.BASE_URL;
+
     const programs = [
         {
             title: "Financial Education",
             text: "Build strong foundations in money management, budgeting, and financial decision-making.",
-            image: "/images/Financial-Education.jpg",
+            image: `${baseUrl}images/Financial-Education.jpg`,
         },
         {
             title: "Personal Finance",
             text: "Develop practical skills for managing income, expenses, savings, and financial goals.",
-            image: "/images/Personal-Finance.jpg",
+            image: `${baseUrl}images/Personal-Finance.jpg`,
         },
         {
             title: "Investment & Wealth",
             text: "Learn the fundamentals of investing, risk management, and long-term wealth building.",
-            image: "/images/Investment-Wealth.jpg",
+            image: `${baseUrl}images/Investment-Wealth.jpg`,
         },
         {
             title: "Professional Growth",
             text: "Strengthen your skills, confidence, and knowledge for personal and professional growth.",
-            image: "/images/Professional-Growth.jpg",
+            image: `${baseUrl}images/Professional-Growth.jpg`,
         },
     ];
 
@@ -75,11 +77,7 @@ function ProgramsOverview() {
         <section className="programs-overview">
             <div className="programs-container">
 
-                {/* =========================
-                    EXPLORE OUR PROGRAMS
-                ========================= */}
                 <div className="programs-section">
-
                     <div className="programs-heading">
                         <div>
                             <h2>Explore Our Programs</h2>
@@ -95,13 +93,11 @@ function ProgramsOverview() {
                     </div>
 
                     <div className="program-grid">
-                        {programs.map((program, index) => (
+                        {programs.map((program) => (
                             <article
                                 className="program-card"
-                                key={index}
+                                key={program.title}
                             >
-
-                                {/* PROGRAM IMAGE */}
                                 <div className="program-image">
                                     <img
                                         src={program.image}
@@ -109,31 +105,22 @@ function ProgramsOverview() {
                                     />
                                 </div>
 
-                                {/* PROGRAM CONTENT */}
                                 <div className="program-content">
                                     <h3>{program.title}</h3>
-
                                     <p>{program.text}</p>
 
                                     <a href="#courses">
                                         Learn More →
                                     </a>
                                 </div>
-
                             </article>
                         ))}
                     </div>
-
                 </div>
 
-                {/* =========================
-                    LOWER CONTENT
-                ========================= */}
                 <div className="lower-overview">
 
-                    {/* WHY CHOOSE */}
                     <div className="why-section">
-
                         <div className="section-heading-left">
                             <h2>
                                 Why Choose
@@ -150,10 +137,10 @@ function ProgramsOverview() {
                         </div>
 
                         <div className="benefit-list">
-                            {benefits.map((benefit, index) => (
+                            {benefits.map((benefit) => (
                                 <div
                                     className="benefit-item"
-                                    key={index}
+                                    key={benefit.title}
                                 >
                                     <div className="benefit-check">
                                         ✓
@@ -166,15 +153,11 @@ function ProgramsOverview() {
                                 </div>
                             ))}
                         </div>
-
                     </div>
 
-                    {/* HOW IT WORKS */}
                     <div className="how-section">
-
                         <div className="how-heading">
                             <h2>How It Works</h2>
-
                             <p>
                                 Start your learning journey in 4 simple steps.
                             </p>
@@ -182,10 +165,8 @@ function ProgramsOverview() {
 
                         <div className="steps">
                             {steps.map((step, index) => (
-                                <React.Fragment key={index}>
-
+                                <React.Fragment key={step.number}>
                                     <div className="step">
-
                                         <div className="step-number">
                                             {step.number}
                                         </div>
@@ -195,9 +176,7 @@ function ProgramsOverview() {
                                         </div>
 
                                         <h3>{step.title}</h3>
-
                                         <p>{step.text}</p>
-
                                     </div>
 
                                     {index < steps.length - 1 && (
@@ -205,15 +184,12 @@ function ProgramsOverview() {
                                             →
                                         </div>
                                     )}
-
                                 </React.Fragment>
                             ))}
                         </div>
-
                     </div>
 
                 </div>
-
             </div>
         </section>
     );

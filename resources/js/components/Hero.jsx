@@ -81,11 +81,11 @@ function Hero() {
                 {/* RIGHT SIDE */}
                 <div className="hero-visual">
 
-                    <img
-                        src="/images/lady.laptop.png"
-                        alt="Money Doctors Digital learner"
-                        className="hero-woman"
-                    />
+                <img
+    src={`${import.meta.env.BASE_URL}images/lady.laptop.png`}
+    alt="Money Doctors Digital learner"
+    className="hero-woman"
+/>
 
                 </div>
 

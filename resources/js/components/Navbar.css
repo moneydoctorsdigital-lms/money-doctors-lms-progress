@@ -1,6 +1,6 @@
 /* =========================================================
-   MONEY DOCTORS LMS
-   NAVBAR
+   MONEY DOCTORS DIGITAL
+   NAVBAR + UNIFIED MEGA MENUS + CHATBOT
    ========================================================= */
 
    .navbar {
@@ -9,17 +9,19 @@
     z-index: 1000;
     width: 100%;
     background: #061534;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .navbar-container {
-    width: min(calc(100% - 48px), 1280px);
-    min-height: 78px;
+    width: min(calc(100% - 48px), 1380px);
+    min-height: 88px;
     margin: 0 auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+
+    gap: 28px;
 }
 
 .navbar-brand {
@@ -31,186 +33,159 @@
 
 .navbar-logo {
     display: block;
-    width: 220px;
+    width: 255px;
     height: auto;
     max-width: 100%;
     object-fit: contain;
 }
 
 /* =========================================================
-   DESKTOP NAVIGATION
+   DESKTOP NAV
    ========================================================= */
 
-.navbar-links {
+   .navbar-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 8px;
     margin-left: auto;
 }
 
-.navbar-links > a,
-.navbar-dropdown-btn {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.94rem;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.navbar-links > a {
+/* ALL NAV ITEMS — SAME SIZE */
+.nav-link,
+.nav-dropdown-btn {
     position: relative;
-    transition: color 0.2s ease;
-}
 
-.navbar-links > a:hover {
-    color: #6b8fff;
-}
+    height: 46px;
+    min-width: 86px;
 
-/* =========================================================
-   DESKTOP HOVER DROPDOWN
-   ========================================================= */
-
-/* =========================================================
-   DROPDOWN WRAPPER
-   ========================================================= */
-
-   .navbar-dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-
-/* =========================================================
-   DROPDOWN BUTTON
-   ========================================================= */
-
-.navbar-dropdown-btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-
-    padding: 10px 0;
-
-    border: 0;
-    background: transparent;
-
-    color: #ffffff;
-    font-family: inherit;
-    font-size: 0.94rem;
-    font-weight: 600;
-
-    cursor: pointer;
-    white-space: nowrap;
-
-    transition:
-        color 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.navbar-dropdown-btn:hover {
-    color: #6b8fff;
-}
-
-
-/* =========================================================
-   DROPDOWN ARROW
-   ========================================================= */
-
-.navbar-dropdown-arrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 11px;
+    padding: 0 14px;
+
+    border: 0;
+    outline: 0;
+    background: transparent;
+
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 650;
     line-height: 1;
 
-    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    text-decoration: none;
+
+    cursor: pointer;
+    border-radius: 13px;
 
     transition:
-        transform 0.25s ease,
-        color 0.2s ease;
+        color .2s ease,
+        background .2s ease;
 }
 
-.navbar-dropdown:hover .navbar-dropdown-arrow {
-    color: #6b8fff;
-    transform: rotate(180deg);
+/* Dropdown items can be slightly wider because of arrow */
+.nav-dropdown-btn {
+    min-width: 112px;
+    gap: 9px;
 }
 
+/* HOME / CONTACT */
+.nav-link {
+    min-width: 86px;
+}
+
+/* Hover background */
+.nav-link:hover,
+.nav-dropdown:hover > .nav-dropdown-btn {
+    color: #6f97ff;
+    background: rgba(38, 78, 165, .28);
+}
+
+/* Keep text perfectly centered */
+.nav-link,
+.nav-dropdown-btn span:first-child {
+    text-align: center;
+}
+
+/* =========================
+   DROPDOWN CONTAINER
+   ========================= */
+
+.nav-dropdown {
+    position: relative;
+
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* =========================
+   CHEVRON
+   ========================= */
+
+.dropdown-chevron {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-right: 1.7px solid currentColor;
+    border-bottom: 1.7px solid currentColor;
+
+    transform: rotate(45deg) translateY(-2px);
+
+    transition: transform .2s ease;
+}
+
+.nav-dropdown:hover .dropdown-chevron {
+    transform: rotate(225deg) translateY(-1px);
+}
 
 /* =========================================================
-   DROPDOWN MENU
+   UNIFIED MEGA MENU
    ========================================================= */
 
-.navbar-dropdown-menu {
+.mega-menu {
     position: absolute;
 
-    top: calc(100% + 12px);
+    top: calc(100% - 1px);
     left: 50%;
 
-    min-width: 235px;
-    padding: 8px;
+    z-index: 3000;
 
-    transform:
-        translateX(-50%)
-        translateY(-8px);
+    width: min(920px, calc(100vw - 40px));
+
+    display: grid;
+    grid-template-columns: 230px 1fr;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid rgba(18,48,99,.08);
+    border-radius: 18px;
+
+    box-shadow:
+        0 28px 70px rgba(5,24,57,.26);
 
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 
-    background: rgba(6, 21, 52, 0.98);
-
-    border: 1px solid rgba(77, 124, 255, 0.20);
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.35),
-        0 0 0 1px rgba(255, 255, 255, 0.025);
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    transform:
+        translateX(-50%)
+        translateY(10px);
 
     transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
-
-    z-index: 1100;
+        opacity .18s ease,
+        visibility .18s ease,
+        transform .18s ease;
 }
 
-
-/* =========================================================
-   SMALL TOP ACCENT
-   ========================================================= */
-
-.navbar-dropdown-menu::before {
-    content: "";
-
-    position: absolute;
-
-    top: -6px;
-    left: 50%;
-
-    width: 12px;
-    height: 12px;
-
-    transform: translateX(-50%) rotate(45deg);
-
-    background: #061534;
-
-    border-left: 1px solid rgba(77, 124, 255, 0.20);
-    border-top: 1px solid rgba(77, 124, 255, 0.20);
-}
-
-
-/* =========================================================
-   SHOW ON HOVER
-   ========================================================= */
-
-.navbar-dropdown:hover .navbar-dropdown-menu {
+.nav-dropdown:hover .mega-menu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -220,99 +195,396 @@
         translateY(0);
 }
 
-
 /* =========================================================
-   DROPDOWN LINKS
+   MEGA MENU ARROW
    ========================================================= */
 
-.navbar-dropdown-menu a {
-    position: relative;
+.mega-menu::before {
+    content: "";
 
-    display: flex;
-    align-items: center;
+    position: absolute;
 
-    width: 100%;
+    top: -8px;
+    left: 50%;
 
-    min-height: 42px;
-    padding: 0 13px;
+    width: 16px;
+    height: 16px;
 
-    border-radius: 9px;
+    background: #fff;
 
-    color: rgba(255, 255, 255, 0.82);
+    transform:
+        translateX(-50%)
+        rotate(45deg);
 
-    text-decoration: none;
-
-    font-size: 0.88rem;
-    font-weight: 500;
-
-    transition:
-        background 0.18s ease,
-        color 0.18s ease,
-        padding-left 0.18s ease;
+    border-left: 1px solid rgba(18,48,99,.06);
+    border-top: 1px solid rgba(18,48,99,.06);
 }
 
-
 /* =========================================================
-   HOVER ITEM
+   LEFT INTRO
    ========================================================= */
 
-.navbar-dropdown-menu a:hover {
-    padding-left: 17px;
+.mega-intro {
+    position: relative;
+
+    min-height: 100%;
+
+    padding: 36px 25px 25px;
+
+    overflow: hidden;
 
     background:
         linear-gradient(
-            90deg,
-            rgba(63, 111, 245, 0.18),
-            rgba(77, 67, 232, 0.08)
+            145deg,
+            #eef4ff 0%,
+            #e5edff 100%
         );
-
-    color: #ffffff;
 }
 
+.mega-eyebrow {
+    display: block;
 
-/* =========================================================
-   BLUE INDICATOR ON HOVER
-   ========================================================= */
+    margin-bottom: 17px;
 
-.navbar-dropdown-menu a::before {
+    color: #2865ed;
+
+    font-size: .72rem;
+    font-weight: 800;
+
+    letter-spacing: .12em;
+
+    line-height: 1.35;
+}
+
+.mega-intro h3 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    color: #071a43;
+
+    font-size: 1.45rem;
+    line-height: 1.12;
+
+    letter-spacing: -.035em;
+}
+
+.mega-line {
+    display: block;
+
+    width: 46px;
+    height: 3px;
+
+    margin: 22px 0 18px;
+
+    background: #2f6dff;
+
+    border-radius: 999px;
+}
+
+.mega-intro p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 180px;
+
+    margin: 0;
+
+    color: #4d6284;
+
+    font-size: .82rem;
+    line-height: 1.55;
+}
+
+.mega-target {
+    position: absolute;
+
+    right: -16px;
+    bottom: -18px;
+
+    width: 125px;
+    height: 125px;
+
+    display: grid;
+    place-items: center;
+
+    border: 14px solid rgba(48,111,255,.18);
+    border-radius: 50%;
+
+    color: #2968ee;
+
+    font-size: 3rem;
+
+    transform: rotate(-28deg);
+}
+
+.mega-target::before {
     content: "";
 
     position: absolute;
 
-    left: 5px;
+    width: 76px;
+    height: 76px;
 
-    width: 3px;
-    height: 0;
+    border: 8px solid rgba(48,111,255,.16);
+
+    border-radius: 50%;
+}
+
+.mega-target span {
+    position: relative;
+    z-index: 2;
+
+    font-size: 2.1rem;
+}
+
+/* =========================================================
+   RIGHT CONTENT
+   ========================================================= */
+
+.mega-content {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    background: #fff;
+}
+
+.mega-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    padding: 27px 30px 10px;
+}
+
+/* =========================================================
+   MEGA CARDS
+   ========================================================= */
+
+.mega-card {
+    position: relative;
+
+    min-height: 132px;
+
+    display: grid;
+
+    grid-template-columns:
+        62px
+        minmax(0, 1fr)
+        22px;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 19px 12px 19px 0;
+
+    color: #071a43;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #edf1f7;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.mega-card:nth-child(odd) {
+    padding-right: 25px;
+
+    border-right: 1px solid #edf1f7;
+}
+
+.mega-card:nth-child(even) {
+    padding-left: 28px;
+}
+
+.mega-card:nth-last-child(-n+2) {
+    border-bottom: 0;
+}
+
+.mega-card:hover {
+    transform: translateY(-2px);
+}
+
+.mega-icon {
+    width: 62px;
+    height: 62px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: #edf4ff;
+    color: #2868ef;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.mega-card:hover .mega-icon {
+    transform: scale(1.04);
+    background: #e5efff;
+}
+
+.mega-card-copy {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.mega-card-copy strong {
+    color: #071a43;
+
+    font-size: .99rem;
+    font-weight: 750;
+
+    line-height: 1.25;
+}
+
+.mega-card-copy small {
+    color: #667998;
+
+    font-size: .78rem;
+    line-height: 1.5;
+}
+
+.mega-arrow {
+    color: #2467f2;
+
+    font-size: 1.45rem;
+
+    transition:
+        transform .2s ease;
+}
+
+.mega-card:hover .mega-arrow {
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   MEGA FOOTER
+   ========================================================= */
+
+.mega-footer {
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 30px;
+
+    border-top: 1px solid #edf1f7;
+
+    background: #fbfcff;
+}
+
+.mega-footer-copy {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+}
+
+.mega-footer-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border: 2px solid #dbe7ff;
+
+    border-radius: 50%;
+
+    color: #2868ef;
+
+    font-size: 1.25rem;
+}
+
+.mega-footer-copy span:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.mega-footer-copy strong {
+    color: #071a43;
+
+    font-size: .84rem;
+}
+
+.mega-footer-copy small {
+    color: #667998;
+
+    font-size: .72rem;
+}
+
+.mega-cta {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 13px;
+
+    flex-shrink: 0;
+
+    padding: 13px 19px;
 
     border-radius: 999px;
 
-    background: #4d7cff;
+    background:
+        linear-gradient(
+            135deg,
+            #3f72f7,
+            #4d43e8
+        );
 
-    transition: height 0.18s ease;
+    color: #fff;
+
+    font-size: .77rem;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(63,111,245,.22);
+
+    transition:
+        transform .2s ease,
+        filter .2s ease;
 }
 
-.navbar-dropdown-menu a:hover::before {
-    height: 18px;
+.mega-cta:hover {
+    color: #fff;
+
+    transform: translateY(-1px);
+
+    filter: brightness(1.05);
 }
 
-
-/* =========================================================
-   MOUSE BRIDGE
-   Prevent dropdown from disappearing
-   while moving cursor downward
-   ========================================================= */
-
-.navbar-dropdown-menu::after {
-    content: "";
-
-    position: absolute;
-
-    top: -14px;
-    left: 0;
-    right: 0;
-
-    height: 14px;
-}
 /* =========================================================
    ACTIONS
    ========================================================= */
@@ -320,7 +592,9 @@
 .navbar-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+
+    gap: 7px;
+
     flex-shrink: 0;
 }
 
@@ -329,54 +603,357 @@
 }
 
 .navbar-login {
+    width: 78px;
+    height: 48px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 0 14px;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 0.94rem;
+
+    border-radius: 12px;
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 16px;
     font-weight: 700;
-    transition: background 0.2s ease;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 .navbar-login:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+
+    background: rgba(255,255,255,.07);
 }
 
 .navbar-register {
+    height: 52px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
-    padding: 0 25px;
+
+    padding: 0 27px;
+
     border-radius: 999px;
 
-    background: linear-gradient(
-        135deg,
-        #3f6ff5 0%,
-        #4d43e8 100%
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #3f6ff5,
+            #4d43e8
+        );
 
-    color: #ffffff;
-    font-size: 0.94rem;
-    font-weight: 700;
+    color: #fff;
 
-    box-shadow: 0 8px 20px rgba(63, 111, 245, 0.20);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 750;
+
+    box-shadow:
+        0 10px 24px rgba(63,111,245,.22);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
+        transform .2s ease,
+        filter .2s ease,
+        box-shadow .2s ease;
 }
 
 .navbar-register:hover {
-    color: #ffffff;
+    color: #fff;
+
     transform: translateY(-1px);
+
     filter: brightness(1.05);
-    box-shadow: 0 12px 26px rgba(63, 111, 245, 0.30);
+
+    box-shadow:
+        0 14px 28px rgba(63,111,245,.30);
+}
+
+/* =========================================================
+   CHATBOT
+   SMALLER VERSION
+   ========================================================= */
+
+.money-chat {
+    position: fixed;
+
+    right: 22px;
+    bottom: 20px;
+
+    z-index: 5000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 9px;
+}
+
+/* smaller trigger */
+
+.chat-trigger {
+    position: relative;
+
+    min-height: 50px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 18px 0 10px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: #1644c8;
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: .82rem;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px rgba(8,45,153,.28);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.chat-trigger:hover {
+    transform: translateY(-2px);
+
+    background: #1a4bd5;
+
+    box-shadow:
+        0 16px 32px rgba(8,45,153,.32);
+}
+
+.chat-trigger-icon {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+    color: #1644c8;
+
+    font-size: 1.15rem;
+
+    line-height: 1;
+}
+
+.chat-status {
+    position: absolute;
+
+    left: 5px;
+    top: 5px;
+
+    width: 8px;
+    height: 8px;
+
+    border: 2px solid #1644c8;
+
+    border-radius: 50%;
+
+    background: #55e68b;
+}
+
+/* =========================================================
+   CHAT PANEL
+   ========================================================= */
+
+.chat-panel {
+    width: 320px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #fff;
+
+    box-shadow:
+        0 25px 60px rgba(5,24,57,.25);
+
+    border: 1px solid rgba(12,45,100,.09);
+}
+
+.chat-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 17px;
+
+    background: #1644c8;
+
+    color: #fff;
+}
+
+.chat-panel-head > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.chat-panel-head strong {
+    font-size: .92rem;
+}
+
+.chat-panel-head span {
+    font-size: .65rem;
+
+    opacity: .85;
+}
+
+.chat-panel-head i {
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #55e68b;
+}
+
+.chat-panel-head button {
+    width: 27px;
+    height: 27px;
+
+    border: 0;
+
+    background: rgba(255,255,255,.12);
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    font-size: 1.1rem;
+
+    cursor: pointer;
+}
+
+.chat-panel-body {
+    min-height: 165px;
+
+    padding: 16px;
+
+    background: #f8faff;
+}
+
+.chat-bubble {
+    max-width: 86%;
+
+    padding: 10px 12px;
+
+    border-radius:
+        13px
+        13px
+        13px
+        4px;
+
+    background: #fff;
+
+    color: #203658;
+
+    font-size: .78rem;
+    line-height: 1.45;
+
+    box-shadow:
+        0 4px 15px rgba(12,45,100,.07);
+}
+
+.chat-quick {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 13px;
+}
+
+.chat-quick button {
+    padding: 7px 9px;
+
+    border: 1px solid #dbe5f7;
+
+    border-radius: 999px;
+
+    background: #fff;
+
+    color: #2457b9;
+
+    font-size: .67rem;
+
+    cursor: pointer;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px;
+
+    border-top: 1px solid #e9eef7;
+
+    background: #fff;
+}
+
+.chat-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 37px;
+
+    padding: 0 10px;
+
+    border: 1px solid #dce5f3;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: .74rem;
+}
+
+.chat-input input:focus {
+    border-color: #78a0ff;
+}
+
+.chat-input button {
+    width: 37px;
+    height: 37px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: #2868ef;
+
+    color: #fff;
+
+    cursor: pointer;
 }
 
 /* =========================================================
@@ -385,37 +962,49 @@
 
 .menu-toggle {
     display: none;
+
     width: 44px;
     height: 44px;
+
     padding: 0;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border:
+        1px solid rgba(255,255,255,.15);
+
     border-radius: 10px;
 
-    background: rgba(255, 255, 255, 0.05);
+    background:
+        rgba(255,255,255,.05);
 
     cursor: pointer;
 
     align-items: center;
     justify-content: center;
+
     flex-direction: column;
+
     gap: 5px;
 }
 
 .menu-toggle span {
     display: block;
+
     width: 21px;
     height: 2px;
+
     border-radius: 999px;
-    background: #ffffff;
+
+    background: #fff;
 
     transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+        transform .2s ease,
+        opacity .2s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform:
+        translateY(7px)
+        rotate(45deg);
 }
 
 .menu-toggle.open span:nth-child(2) {
@@ -423,7 +1012,9 @@
 }
 
 .menu-toggle.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
 }
 
 /* =========================================================
@@ -432,95 +1023,75 @@
 
 .mobile-menu {
     display: none;
+
     width: 100%;
-    padding: 16px 0 24px;
+
+    padding: 14px 0 22px;
+
     background: #061534;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
 }
 
 .mobile-nav {
-    width: min(calc(100% - 48px), 1280px);
+    width: min(calc(100% - 32px), 680px);
+
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
+
     gap: 2px;
 }
 
-.mobile-nav > a {
-    display: flex;
-    align-items: center;
-
-    min-height: 48px;
-    padding: 0 12px;
-
-    border-radius: 10px;
-
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-
-    font-size: 1rem;
-    font-weight: 600;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
-}
-
-.mobile-nav > a:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.07);
-}
-
-.mobile-dropdown {
-    width: 100%;
-}
-
+.mobile-nav > a,
 .mobile-dropdown-btn {
-    width: 100%;
-    min-height: 48px;
-    padding: 0 12px;
+    min-height: 50px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border: none;
-    outline: none;
+    padding: 0 13px;
+
     border-radius: 10px;
 
+    color: rgba(255,255,255,.88);
+
     background: transparent;
-    color: rgba(255, 255, 255, 0.85);
+
+    text-decoration: none;
 
     font-family: inherit;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 650;
+
     text-align: left;
 
-    cursor: pointer;
+    border: 0;
 
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+    cursor: pointer;
 }
 
+.mobile-nav > a:hover,
 .mobile-dropdown-btn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.07);
+    background:
+        rgba(255,255,255,.07);
+
+    color: #fff;
 }
 
 .mobile-arrow {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
-    font-size: 1rem;
-
-    transition: transform 0.2s ease;
+    transition:
+        transform .2s ease;
 }
 
 .mobile-arrow.rotate {
-    transform: rotate(180deg);
+    transform:
+        rotate(180deg);
 }
 
 .mobile-submenu {
@@ -528,125 +1099,187 @@
     flex-direction: column;
 
     margin: 2px 8px 6px;
+
     padding: 5px 0;
 
-    border-left: 1px solid rgba(107, 143, 255, 0.30);
-    background: rgba(255, 255, 255, 0.025);
+    border-left:
+        1px solid rgba(107,143,255,.35);
 
-    border-radius: 0 8px 8px 0;
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:
+        0
+        8px
+        8px
+        0;
 }
 
 .mobile-submenu a {
+    min-height: 43px;
+
     display: flex;
     align-items: center;
 
-    min-height: 42px;
-    padding: 0 14px 0 20px;
+    padding:
+        0
+        14px
+        0
+        20px;
 
-    color: rgba(255, 255, 255, 0.72);
+    color:
+        rgba(255,255,255,.72);
+
     text-decoration: none;
 
-    font-size: 0.92rem;
-    font-weight: 500;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        padding-left 0.2s ease;
+    font-family: inherit;
+    font-size: .92rem;
 }
 
 .mobile-submenu a:hover {
-    color: #ffffff;
-    background: rgba(76, 118, 255, 0.12);
-    padding-left: 24px;
+    color: #fff;
+
+    background:
+        rgba(76,118,255,.12);
 }
 
 .mobile-actions {
-    width: min(calc(100% - 48px), 1280px);
+    width: min(calc(100% - 32px), 680px);
+
     margin: 14px auto 0;
 
     display: flex;
     flex-direction: column;
+
     gap: 9px;
 }
 
 .mobile-actions a {
-    width: 100%;
-    min-height: 48px;
+    min-height: 49px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border-radius: 12px;
+
     text-decoration: none;
 
-    font-size: 0.96rem;
+    font-size: .96rem;
     font-weight: 700;
 }
 
 .mobile-login {
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    background: rgba(255, 255, 255, 0.04);
-    color: #ffffff;
-}
+    border:
+        1px solid rgba(255,255,255,.14);
 
-.mobile-login:hover {
-    background: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
+    background:
+        rgba(255,255,255,.04);
+
+    color: #fff;
 }
 
 .mobile-register {
-    background: linear-gradient(
-        135deg,
-        #3f6ff5 0%,
-        #4d43e8 100%
-    );
-    color: #ffffff;
-}
+    background:
+        linear-gradient(
+            135deg,
+            #3f6ff5,
+            #4d43e8
+        );
 
-.mobile-register:hover {
-    color: #ffffff;
-    filter: brightness(1.05);
+    color: #fff;
 }
 
 /* =========================================================
-   TABLET
+   RESPONSIVE
    ========================================================= */
 
-@media (max-width: 1100px) {
-    .navbar-container {
-        width: min(calc(100% - 40px), 1180px);
-    }
+@media (max-width: 1250px) {
 
-    .navbar-links {
-        gap: 20px;
+    .navbar-container {
+        width:
+            min(
+                calc(100% - 36px),
+                1180px
+            );
     }
 
     .navbar-logo {
-        width: 200px;
+        width: 220px;
     }
 
-    .navbar-links > a,
-    .navbar-dropdown-btn,
+    .navbar-links {
+        gap: 2px;
+    }
+
+    .nav-link,
+    .nav-dropdown-btn,
+    .navbar-login,
+    .navbar-register {
+        font-size: 16px;
+    }
+
+    .nav-link,
+    .nav-dropdown-btn {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .mega-menu {
+        width:
+            min(
+                860px,
+                calc(100vw - 32px)
+            );
+    }
+}
+
+@media (max-width: 1050px) {
+
+    .navbar-container {
+        min-height: 78px;
+    }
+
+    .navbar-logo {
+        width: 195px;
+    }
+
+    .navbar-links {
+        gap: 0;
+    }
+
+    .nav-link,
+    .nav-dropdown-btn {
+        width: 88px;
+        min-width: 88px;
+
+        font-size: 14px;
+    }
+
     .navbar-login {
-        font-size: 0.88rem;
+        width: 68px;
+
+        font-size: 14px;
     }
 
     .navbar-register {
-        padding: 0 21px;
+        padding-left: 18px;
+        padding-right: 18px;
+
+        font-size: 14px;
     }
 }
 
 /* =========================================================
-   MOBILE
+   TABLET / MOBILE
    ========================================================= */
 
 @media (max-width: 899px) {
+
     .navbar-container {
         width: calc(100% - 32px);
+
         min-height: 70px;
-        gap: 16px;
     }
 
     .navbar-logo {
@@ -666,15 +1299,42 @@
         display: block;
     }
 
-    .mobile-nav,
-    .mobile-actions {
-        width: calc(100% - 32px);
+    .nav-dropdown {
+        display: none;
     }
 
-    /* Desktop hover dropdown is disabled on mobile.
-       Mobile uses tap/expand instead. */
-    .navbar-dropdown {
-        display: none;
+    .money-chat {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .chat-trigger {
+        min-height: 46px;
+
+        padding:
+            0
+            15px
+            0
+            9px;
+
+        gap: 8px;
+
+        font-size: .76rem;
+    }
+
+    .chat-trigger-icon {
+        width: 28px;
+        height: 28px;
+
+        font-size: 1rem;
+    }
+
+    .chat-panel {
+        width:
+            min(
+                320px,
+                calc(100vw - 28px)
+            );
     }
 }
 
@@ -682,9 +1342,11 @@
    SMALL MOBILE
    ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
+
     .navbar-container {
         width: calc(100% - 24px);
+
         min-height: 64px;
     }
 
@@ -692,32 +1354,64 @@
         width: 165px;
     }
 
-    .menu-toggle {
-        width: 40px;
-        height: 40px;
-    }
-
     .mobile-nav,
     .mobile-actions {
         width: calc(100% - 24px);
     }
 
-    .mobile-submenu a {
-        font-size: 0.88rem;
+    .money-chat {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .chat-trigger {
+        min-height: 43px;
+
+        padding:
+            0
+            13px
+            0
+            8px;
+
+        gap: 7px;
+
+        font-size: .72rem;
+    }
+
+    .chat-trigger-icon {
+        width: 26px;
+        height: 26px;
+
+        font-size: .95rem;
+    }
+
+    .chat-status {
+        left: 5px;
+        top: 5px;
+
+        width: 7px;
+        height: 7px;
     }
 }
 
-/* =========================================================
-   VERY SMALL MOBILE
-   ========================================================= */
+@media (max-width: 380px) {
 
-@media (max-width: 360px) {
     .navbar-logo {
         width: 150px;
     }
 
-    .mobile-dropdown-btn,
-    .mobile-nav > a {
-        font-size: 0.94rem;
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chat-trigger {
+        min-height: 40px;
+
+        padding-right: 10px;
+    }
+
+    .chat-trigger > span:last-child {
+        display: none;
     }
 }

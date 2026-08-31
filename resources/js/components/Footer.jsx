@@ -84,16 +84,16 @@ function Footer() {
                     </div>
 
 
-                    {/* QUICK LINKS */}
                     <div className="footer-column">
-                        <h3>Quick Links</h3>
+    <h3>Quick Links</h3>
 
-                        <a href="#home">Home</a>
-                        <a href="#courses">Courses</a>
-                        <a href="#stories">Stories</a>
-                        <a href="#about">About Us</a>
-                        <a href="#contact">Contact</a>
-                    </div>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/free-learning">Learn</a>
+    <a href="/courses">Courses</a>
+    <a href="/testimonials">Stories</a>
+    <a href="/contact">Contact</a>
+</div>
 
 
                     {/* RESOURCES */}
